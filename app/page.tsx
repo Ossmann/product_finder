@@ -1,4 +1,5 @@
 import Image from "next/image";
+import RoundedButton from "../app/ui/buttons";
 
 export default function Home() {
   return (
@@ -108,6 +109,11 @@ export default function Home() {
           </p>
         </a>
       </div>
+
+      <div>
+      {/* Link to start the Product Finder */}
+      <RoundedButton href="/questions">START</RoundedButton>
+    </div>
     </main>
   );
 }
