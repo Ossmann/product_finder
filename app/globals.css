@@ -28,6 +28,10 @@ body {
 
 }
 
+.bg-gradient-to-t {
+  background: linear-gradient(to top, rgba(0, 0.1, 0.1, 0.4), transparent);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
