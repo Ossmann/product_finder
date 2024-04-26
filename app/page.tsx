@@ -1,19 +1,21 @@
 import Image from "next/image";
 import RoundedButton from "../app/ui/buttons";
+import ProductThumbnail from "./ui/productThumbnail";
 import {
   AdjustmentsHorizontalIcon
 } from '@heroicons/react/24/outline';
 
 export default function Home() {
-    // Array of image paths
-    const imagePaths = [
-      "/MuseumPlus.jpeg",
-      "/MuseumStars.png",
-      "/fluxguide_lmw.jpg",
-      "/CollectionExplorer.jpeg",
-      "/Curator.jpeg",
-      "/AR.jpeg",
-    ];
+
+  // Array of image paths
+  const imagePaths = [
+    "/MuseumPlus.jpeg",
+    "/MuseumStars.png",
+    "/fluxguide_lmw.jpg",
+    "/CollectionExplorer.jpeg",
+    "/Curator.jpeg",
+    "/AR.jpeg",
+  ];
 
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-between p-24">
@@ -64,22 +66,12 @@ export default function Home() {
         <div className="relative z-10 flex flex-col items-center justify-center text-center">
           <p className="uppercase font-bold text-2xl">Welcome Australia</p>
           <p>Find the right tool to tell your culture story.</p>
+          <p>Explore our product categories, use the intelligent product finder or get ideas from our AI consultant.</p>
+
         </div>
 
-        {/* Images aligned horizontally */}
-        <div className="flex justify-center mt-4">
-          {imagePaths.map((path, index) => (
-            <div key={index} className="mx-1 w-200 h-200 overflow-hidden relative">
-              <Image
-                src={path}
-                alt={`Image ${index + 1}`}
-                className="object-cover h-40 w-40"
-                width={200}
-                height={200}
-              />
-            </div>
-          ))}
-        </div>
+        {/* Images of Products */}
+        <ProductThumbnail imagePaths={imagePaths} />
 
 
       {/* Link to start the Product Finder */}
