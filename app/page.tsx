@@ -5,6 +5,16 @@ import {
 } from '@heroicons/react/24/outline';
 
 export default function Home() {
+    // Array of image paths
+    const imagePaths = [
+      "/MuseumPlus.jpeg",
+      "/MuseumStars.png",
+      "/fluxguide_lmw.jpg",
+      "/CollectionExplorer.jpeg",
+      "/Curator.jpeg",
+      "/AR.jpeg",
+    ];
+
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-between p-24">
 
@@ -51,14 +61,26 @@ export default function Home() {
         
       
 
-      <div className="relative z-10 flex flex-col items-center justify-center text-center">
-        <p className="uppercase font-bold text-2xl">Welcome Australia</p>
-        <p>Find the right tool to tell your culture story.</p>
-      </div>
+        <div className="relative z-10 flex flex-col items-center justify-center text-center">
+          <p className="uppercase font-bold text-2xl">Welcome Australia</p>
+          <p>Find the right tool to tell your culture story.</p>
+        </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        {/* Links */}
-      </div>
+        {/* Images aligned horizontally */}
+        <div className="flex justify-center mt-4">
+          {imagePaths.map((path, index) => (
+            <div key={index} className="mx-1 w-200 h-200 overflow-hidden relative">
+              <Image
+                src={path}
+                alt={`Image ${index + 1}`}
+                className="object-cover h-40 w-40"
+                width={200}
+                height={200}
+              />
+            </div>
+          ))}
+        </div>
+
 
       {/* Link to start the Product Finder */}
       <div>
