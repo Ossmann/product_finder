@@ -24,7 +24,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-    background-image: url('/public/banner-img1-CSG.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-image: url('/public/banner-img1-CSG.png');
 
 }
 
@@ -36,30 +36,34 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
 
+  /* Act as a border */
+  .thumbnail-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2em;
+  }
 
-/* Define the keyframes for the border animation of product thumbnails */
-@keyframes moveBorder {
-  0% {
-    transform: translateX(0) translateY(0);
-  }
-  25% {
-    transform: translateX(100%) translateY(0);
-  }
-  50% {
-    transform: translateX(100%) translateY(100%);
-  }
-  75% {
-    transform: translateX(0) translateY(100%);
-  }
-  100% {
-    transform: translateX(0) translateY(0);
-  }
-}
+  /* Gradient */
+  .thumbnail-wrapper::before {
+    content: '';
+    position: absolute;
+    /* left: -25%;
+    top: -25%; */
+    height: 100%;
+    width: 100%;
+    background: conic-gradient(
+      rgba(244, 114, 182, 0.4) 0deg,
+      orange 0deg,
+      transparent 80deg
+    );
 
-/* Apply the animation to the border */
-.animate-border {
-  animation: moveBorder 4s linear infinite;
+    @apply absolute left-[-25%] top-[-25%] h-[150%] w-[150%] animate-border-spin content-[''];
+  }
+
+  /* Thumbnail content */
+  .card-content {
+    @apply absolute top-0 left-0 w-full h-full flex items-center justify-center p-0 m-0; /* Updated */
+  }
 }
 

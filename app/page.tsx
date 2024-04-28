@@ -2,7 +2,8 @@ import Image from "next/image";
 import RoundedButton from "../app/ui/buttons";
 import ProductThumbnail from "./ui/productThumbnail";
 import {
-  AdjustmentsHorizontalIcon
+  AdjustmentsHorizontalIcon,
+  SparklesIcon
 } from '@heroicons/react/24/outline';
 
 export default function Home() {
@@ -15,6 +16,16 @@ export default function Home() {
     "/CollectionExplorer.jpeg",
     "/Curator.jpeg",
     "/AR.jpeg",
+  ];
+
+  // Array of image paths
+  const imageTitles = [
+    "MuseumPlus",
+    "MuseumStars",
+    "Guiding",
+    "Collection Explorer",
+    "Curator",
+    "Spatial Computing",
   ];
 
   return (
@@ -55,13 +66,9 @@ export default function Home() {
           </div>
 
           <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30 font-normal text-black">
-              This is a uni project - In progress
+              University project - In progress
           </p>
-
         </div>
-
-        
-      
 
         <div className="relative z-10 flex flex-col items-center justify-center text-center">
           <p className="uppercase font-bold text-2xl">Welcome Australia</p>
@@ -71,15 +78,22 @@ export default function Home() {
         </div>
 
         {/* Images of Products */}
-        <ProductThumbnail imagePaths={imagePaths} />
+        <ProductThumbnail imagePaths={imagePaths} imageTitles={imageTitles} />
 
 
-      {/* Link to start the Product Finder */}
-      <div>
-        <RoundedButton icon={<AdjustmentsHorizontalIcon className="w-5 h-5" />} href="/questions">
-          Start Finder
+      {/* Link to start the Product Finder and AI */}
+      <div className="flex items-center space-x-4">
+        <div className="animate-pulse hover:animate-none">
+          <RoundedButton icon={<AdjustmentsHorizontalIcon className="w-5 h-5" />} href="/questions">
+            Start Finder
+          </RoundedButton>
+        </div>
+        
+        <RoundedButton icon={<SparklesIcon className="w-5 h-5" />} href="/ai">
+          AI Consultant
         </RoundedButton>
       </div>
+
 
       {/* Bottom gradiant */}
       <div className="absolute bottom-0 left-0 w-full h-20">

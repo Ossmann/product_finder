@@ -2,13 +2,15 @@ import React from 'next';
 
 interface ProductThumbnailProps {
   imagePaths: string[];
+  imageTitles: string[];
 }
 
-const ProductThumbnail: React.FC<ProductThumbnailProps> = ({ imagePaths }) => {
+const ProductThumbnail: React.FC<ProductThumbnailProps> = ({ imagePaths, imageTitles }) => {
   return (
     <div className="flex justify-center mt-4">
       {imagePaths.map((path, index) => (
-        <div key={index} className="mx-1 w-200 h-200 overflow-hidden relative">
+        <div key={index} className='thumbnail-wrapper transform transition duration-1000 hover:scale-125'>
+        <div className="mx-1 w-200 h-200 overflow-hidden relative">
           {/* Image */}
           <img
             src={path}
@@ -17,8 +19,8 @@ const ProductThumbnail: React.FC<ProductThumbnailProps> = ({ imagePaths }) => {
             width={200}
             height={200}
           />
-          {/* Animated border */}
-          <div className="absolute inset-0 border-orange-500 border-solid border-4 rounded-lg animate-border" />
+          <div>{imageTitles[index]}</div>
+        </div>
         </div>
       ))}
     </div>
