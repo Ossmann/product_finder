@@ -1,20 +1,11 @@
-import { sql } from "@vercel/postgres";
-
-export default async function Cart({
-  params
-} : {
-  params: { user: string }
-}): Promise<JSX.Element> {
-  const { rows } = await sql`SELECT * from CARTS`;
+import Form from '@/app/ui/createSearchProfile-form';
+// import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
+ 
+export default async function Page() {
 
   return (
-    <div>
-      Test
-      {rows.map((row) => (
-        <div key={row.id}>
-          {row.id} - {row.quantity}
-        </div>
-      ))}
-    </div>
+    <main>
+      <Form />
+    </main>
   );
 }
