@@ -9,16 +9,18 @@ const ProductThumbnail: React.FC<ProductThumbnailProps> = ({ imagePaths, imageTi
   return (
     <div className="flex justify-center mt-4">
       {imagePaths.map((path, index) => (
-        <div key={index} className='thumbnail-wrapper transform transition duration-1000 hover:scale-125'>
-        <div className="mx-1 w-200 h-200 overflow-hidden relative">
+        <div key={index} className=''>
+        <div className="mx-2 transition ease-in-out delay-150 duration-700 hover:scale-125 transform">
           {/* Image */}
-          <img
-            src={path}
-            alt={`Image ${index + 1}`}
-            className="object-cover h-40 w-40"
-            width={200}
-            height={200}
-          />
+          <div className="border-solid border-2 border-orange-600 shadow-innerCustom">
+            <img
+              className="object-cover h-80 w-60"
+              src={path}
+              alt={`Image ${index + 1}`}
+              width={200}
+              height={200}
+            />
+          </div>
           <div>{imageTitles[index]}</div>
         </div>
         </div>

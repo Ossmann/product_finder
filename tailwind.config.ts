@@ -8,21 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-      keyframes: {
-        'border-spin': {
-          '100%': {
-            transform: 'rotate(-360deg)',
-          },
-        },
-      },
-      animation: {
-        'border-spin': 'border-spin 7s linear infinite',
-      },
+      boxShadow: {
+        innerCustom: 'inset 0 -10px 4px orange',
+      }
     },
   },
   plugins: [],

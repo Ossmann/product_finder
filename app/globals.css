@@ -37,29 +37,13 @@ body {
     text-wrap: balance;
   }
 
-  /* Act as a border */
-  .thumbnail-wrapper {
-    position: relative;
-    overflow: hidden;
-    border-radius: 2em;
-  }
 
-  /* Gradient */
-  .thumbnail-wrapper::before {
-    content: '';
-    position: absolute;
-    /* left: -25%;
-    top: -25%; */
-    height: 100%;
-    width: 100%;
+/* Color animated border thumbnails
     background: conic-gradient(
       rgba(244, 114, 182, 0.4) 0deg,
       orange 0deg,
-      transparent 80deg
-    );
+      transparent 80deg */
 
-    @apply absolute left-[-25%] top-[-25%] h-[150%] w-[150%] animate-border-spin content-[''];
-  }
 
   /* Thumbnail content */
   .card-content {
