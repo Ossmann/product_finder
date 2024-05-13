@@ -8,9 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      boxShadow: {
-        innerCustom: 'inset 0 -10px 4px orange',
-      }
+      colors: {
+        customOrange: '#F49718',
+      },
     },
   },
   plugins: [],

@@ -1,6 +1,11 @@
 import Link from 'next/link';
 import {
-    UserCircleIcon,
+    ScaleIcon,
+    PhotoIcon,
+    UsersIcon,
+    DevicePhoneMobileIcon,
+    PaperAirplaneIcon,
+    ArrowPathIcon
   } from '@heroicons/react/24/outline';
 import {FormButton} from './buttons';
 import { createSearchProfile } from '@/app/lib/actions';
@@ -24,17 +29,17 @@ export default function Form(){
                 <option value="NationalHistory">National History</option>
                 <option value="Art">Art</option>
                 <option value="Science">Science</option>
-                <option value="Other">Other</option>
+                <option value="Other">Other</option> 
 
               </select>
-              <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+              <ScaleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
             </div>
           </div>
         
         {/* MEDIUM */}
         <div className="mb-4">
             <label className="mb-2 block text-sm font-medium text-black">
-              What is the discipline of your Museum?
+              What is the type of media you would like to work with?
             </label>
             <div className="relative">
               <select
@@ -50,26 +55,31 @@ export default function Form(){
                 <option value="5">Other</option>
 
               </select>
-              <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+              <PhotoIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
             </div>
           </div>
 
         {/* Target Audience */}
         <div className="mb-4">
-          <label className="mb-2 block text-sm font-medium text-black">
-            Who is your Museum's main target audience?
-          </label>
-          <div className="relative">
-            <input
-              type="text"
-              id="targetAudience"
-              name="targetAudience"
-              className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
-              placeholder="e.g. Children"
-            />
-            <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+            <label className="mb-2 block text-sm font-medium text-black">
+              What is the target audience of your Museum?
+            </label>
+            <div className="relative">
+              <select
+                id="targetAudience"
+                name="targetAudience"
+                className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                defaultValue="Families"
+              >
+                <option value="Families">Families</option>
+                <option value="School Classes">School Classes</option>
+                <option value="Seniors">Seniors</option>
+                <option value="International Visitors">International Visitors</option>
+                <option value="Local Tourists">Local Tourists</option>
+              </select>
+              <UsersIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+            </div>
           </div>
-        </div>
 
             {/* Platform */}
           <div className="mb-4">
@@ -93,7 +103,7 @@ export default function Form(){
                 <option value="8">Other</option>
 
               </select>
-              <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+              <DevicePhoneMobileIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
             </div>
           </div>
 
@@ -115,7 +125,7 @@ export default function Form(){
                 <option value="4">Post-visit</option>
                 <option value="5">Remote Experience</option>
               </select>
-              <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+              <PaperAirplaneIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
             </div>
           </div>
 
@@ -136,7 +146,7 @@ export default function Form(){
                 <option value="3">Once a year</option>
                 <option value="4">No changing exhibitions</option>
               </select>
-              <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+              <ArrowPathIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
             </div>
           </div>
   

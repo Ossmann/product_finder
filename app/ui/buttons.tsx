@@ -9,12 +9,11 @@ interface FormProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export function FormButton({ children, className, icon, href, ...rest }: FormProps) {
   return (
-    <button
+   <button
       {...rest}
       className={clsx(
         'inline-flex items-center px-6 py-3 bg-white border border-orange-500 rounded-full text-orange-500 hover:bg-orange-500 hover:text-white transition duration-300 ease-in-out uppercase',
         className,
-        href,
       )}
     >
       {icon}

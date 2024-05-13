@@ -15,21 +15,21 @@ enum MuseumCategory {
 const FormSchema = z.object({
     id: z.string(),
     museumCategory: z.string(),
+    medium: z.string(),
     targetAudience: z.string(),
-    medium: z.number(),
-    platform: z.number(),
-    customerJourney: z.number(),
-    frequencyExhibitions: z.number(),
+    platform: z.string(),
+    customerJourney: z.string(),
+    frequencyExhibitions: z.string(),
     date: z.string(),
 });
 
 const CreateSearchProfile = FormSchema.omit({ id: true, date: true });
 
 export async function createSearchProfile(formData: FormData) {
-    const { museumCategory, targetAudience, medium, platform, customerJourney, frequencyExhibitions } = CreateSearchProfile.parse({
+    const { museumCategory, medium, targetAudience, platform, customerJourney, frequencyExhibitions } = CreateSearchProfile.parse({
       museumCategory: formData.get('museumCategory'),
-      targetAudience: formData.get('targetAudience'),
       medium: formData.get('medium'),
+      targetAudience: formData.get('targetAudience'),
       platform: formData.get('platform'),
       customerJourney: formData.get('customerJourney'),
       frequencyExhibitions: formData.get('frequencyExhibitions'),
@@ -37,11 +37,11 @@ export async function createSearchProfile(formData: FormData) {
 const date = new Date().toISOString().split('T')[0];
 
 await sql`
-        INSERT INTO MuseumSearchProfiles (museumCategory, targetAudience, medium, platform, customerJourney, frequencyExhibitions, date)
-        VALUES (${museumCategory}, ${targetAudience}, ${medium}, ${platform}, ${customerJourney}, ${frequencyExhibitions}, ${date})
+        INSERT INTO MuseumSearchProfiles (museumCategory, medium, targetAudience, platform, customerJourney, frequencyExhibitions, date)
+        VALUES (${museumCategory}, ${medium}, ${targetAudience}, ${platform}, ${customerJourney}, ${frequencyExhibitions}, ${date})
     `;
 
     revalidatePath('/');
-    redirect('/');
+    redirect('/recommendations');
 }
 

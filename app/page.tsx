@@ -10,10 +10,10 @@ export default function Home() {
 
   // Array of image paths
   const imagePaths = [
-    "/MuseumPlus.jpeg",
+    "/MuseumPlus.png",
     "/MuseumStars.png",
     "/fluxguide_lmw.jpg",
-    "/CollectionExplorer.jpeg",
+    "/CollectionExplorer.png",
     "/Curator.jpeg",
     "/AR.jpeg",
   ];
@@ -26,6 +26,16 @@ export default function Home() {
     "Collection Explorer",
     "Curator",
     "Spatial Computing",
+  ];
+
+   // Array of image links
+   const hrefs = [
+    "https://www.zetcom.com/en/museumplus-en/",
+    "https://www.museumstars.com/en/product-english/",
+    "https://www.fluxguide.com/en",
+    "https://www.fluxguide.com/en/collection-explorer/",
+    "https://ortelia.com/products/ortelia-curator-exhibition-design-software/",
+    "https://www.fluxguide.com/en/explore-new-realities-augmented-virtual-and-mixed-reality/",
   ];
 
   return (
@@ -78,8 +88,10 @@ export default function Home() {
         </div>
 
         {/* Images of Products */}
-        <ProductThumbnail imagePaths={imagePaths} imageTitles={imageTitles} />
-
+        <div className="mb-16 mt-4">
+        
+        <ProductThumbnail imagePaths={imagePaths} imageTitles={imageTitles} hrefs={hrefs} />
+        </div>
 
       {/* Link to start the Product Finder and AI */}
       <div className="flex items-center space-x-4">
@@ -93,7 +105,6 @@ export default function Home() {
           AI Consultant
         </RoundedButton>
       </div>
-
 
       {/* Bottom gradiant */}
       <div className="absolute bottom-0 left-0 w-full h-20">
