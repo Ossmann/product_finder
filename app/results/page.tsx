@@ -1,6 +1,7 @@
 import Image from "next/image";
 import RoundedButton from "../ui/buttons";
 import Recommendations from "../ui/recommendations";
+import { Suspense } from 'react';
 
 import {
   SparklesIcon,
@@ -56,7 +57,9 @@ export default function Results() {
 
     {/* Embed Recommendation reasults as client component */}
     <div className="">
-    <Recommendations/>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Recommendations/>
+      </Suspense>
     </div>
 
 
