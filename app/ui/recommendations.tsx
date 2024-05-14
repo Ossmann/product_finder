@@ -13,7 +13,7 @@ const platforms = [
         href: "https://www.fluxguide.com/en/collection-explorer/",
         description: "MuseumPlus is the industry standard for Collection Management with state-of-the-art web based curation tools.",
         contact: "office@zetcom.com",
-        logo: "/zetcomLogo.png"
+        logo: "/Fluxguide-Logo.svg"
     },
     {
         platformValue: "2",
