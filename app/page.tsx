@@ -21,7 +21,7 @@ export default function Home() {
   // Array of image paths
   const imageTitles = [
     "Collection Management",
-    "Subscription Service",
+    "Plug & Play",
     "Guiding",
     "Online Collection",
     "Curation",

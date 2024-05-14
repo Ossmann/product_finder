@@ -95,12 +95,12 @@ export default function Form(){
               >
                 <option value="1">Web</option>
                 <option value="2">Mobile Apps</option>
-                <option value="3">Game Engines</option>
-                <option value="4">3D platforms</option>
-                <option value="5">Database</option>
-                <option value="6">Augmented Reality</option>
-                <option value="7">Spatial Computing</option>
-                <option value="8">Other</option>
+                {/* <option value="3">Game Engines</option> */}
+                <option value="3">3D platforms</option>
+                <option value="4">Database</option>
+                <option value="5">Augmented Reality</option>
+                {/* <option value="6">Spatial Computing</option> */}
+                <option value="7">Other</option>
 
               </select>
               <DevicePhoneMobileIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />

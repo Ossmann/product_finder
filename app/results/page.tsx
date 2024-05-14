@@ -54,12 +54,14 @@ export default function Results() {
           <p>Or go back to the start to look for inspiration again.</p>
         </div>
 
-
     {/* Embed Recommendation reasults as client component */}
+    <div className="">
     <Recommendations/>
+    </div>
 
 
     {/* Link to start the Product Finder and AI */}
+    <div className="mt-48">
     <div className="flex items-center space-x-4">
         <div className="animate-pulse hover:animate-none">
             <RoundedButton icon={<HomeIcon className="w-5 h-5" />} href="/">
@@ -70,6 +72,7 @@ export default function Results() {
             <RoundedButton icon={<SparklesIcon className="w-5 h-5" />} href="/ai">
             AI Consultant
             </RoundedButton>
+     </div>
      </div>
             
 
