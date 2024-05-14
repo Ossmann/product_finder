@@ -101,9 +101,11 @@ export default function Home() {
           </RoundedButton>
         </div>
         
-        <RoundedButton icon={<SparklesIcon className="w-5 h-5" />} href="/ai">
-          AI Consultant
-        </RoundedButton>
+        <div className="opacity-50">
+            <RoundedButton icon={<SparklesIcon className="w-5 h-5" />} href="/ai">
+            AI Consultant
+            </RoundedButton>
+        </div>
       </div>
 
       {/* Bottom gradiant */}
