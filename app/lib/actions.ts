@@ -42,6 +42,7 @@ await sql`
     `;
 
     revalidatePath('/');
-    redirect('/recommendations');
+    redirect(`/results?platform=${platform}`);
+
 }
 

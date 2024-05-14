@@ -20,11 +20,11 @@ export default function Home() {
 
   // Array of image paths
   const imageTitles = [
-    "MuseumPlus",
-    "MuseumStars",
+    "Collection Management",
+    "Subscription Service",
     "Guiding",
-    "Collection Explorer",
-    "Curator",
+    "Online Collection",
+    "Curation",
     "Spatial Computing",
   ];
 

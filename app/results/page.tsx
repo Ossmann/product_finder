@@ -1,12 +1,13 @@
 import Image from "next/image";
-import RoundedButton from "../../app/ui/buttons";
-import ProductThumbnail from ".././ui/productThumbnail";
+import RoundedButton from "../ui/buttons";
+import Recommendations from "../ui/recommendations";
+
 import {
   SparklesIcon,
   HomeIcon
 } from '@heroicons/react/24/outline';
 
-export default function Recommendations() {
+export default function Results() {
 
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-between p-24">
@@ -52,6 +53,10 @@ export default function Recommendations() {
           <p>Have a look at those solutions that could fit your needs.</p>
           <p>Or go back to the start to look for inspiration again.</p>
         </div>
+
+
+    {/* Embed Recommendation reasults as client component */}
+    <Recommendations/>
 
 
     {/* Link to start the Product Finder and AI */}
