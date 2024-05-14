@@ -19,7 +19,6 @@ const ProductThumbnail: React.FC<ProductThumbnailProps> = ({ imagePaths, imageTi
               <img
                 className="object-cover h-80 w-60 rounded-sm"
                 src={path}
-                alt={`Image ${index + 1}`}
                 width={200}
                 height={200}
               />
