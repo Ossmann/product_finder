@@ -14,7 +14,7 @@ const ProductThumbnail: React.FC<ProductThumbnailProps> = ({ imagePaths, imageTi
         <div key={index} className='hover:z-40'>
         <div className="mx-2 transition ease-in-out delay-150 duration-700 hover:scale-125 transform">
           {/* Image */}
-          <div className="border border-orange-500 hover:border-grey-400 rounded-md shadow-[black] shadow-lg hover:shadow-orange-500">
+          <div className="border-8 border-white border-opacity-25 rounded-md shadow-black shadow-xl transition ease-in-out delay-150 duration-700 hover:border-orange-500">
             <Link target="_blank" href={hrefs[index]}>
               <img
                 className="object-cover h-80 w-60 rounded-sm"
