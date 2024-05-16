@@ -17,7 +17,7 @@ const FormSchema = z.object({
     museumCategory: z.string(),
     medium: z.string(),
     targetAudience: z.string(),
-    platform: z.string(),
+    platform: z.array(z.string()),
     customerJourney: z.string(),
     frequencyExhibitions: z.string(),
     date: z.string(),
@@ -30,19 +30,23 @@ export async function createSearchProfile(formData: FormData) {
       museumCategory: formData.get('museumCategory'),
       medium: formData.get('medium'),
       targetAudience: formData.get('targetAudience'),
-      platform: formData.get('platform'),
+      platform: formData.getAll('platform'),
       customerJourney: formData.get('customerJourney'),
       frequencyExhibitions: formData.get('frequencyExhibitions'),
     });
 const date = new Date().toISOString().split('T')[0];
 
+console.log('Parsed Data:', { museumCategory, medium, targetAudience, platform, customerJourney, frequencyExhibitions, date }); // Log parsed data
+
+const platformArray = `{${platform.join(',')}}`; // Format as PostgreSQL array
+
 await sql`
         INSERT INTO MuseumSearchProfiles (museumCategory, medium, targetAudience, platform, customerJourney, frequencyExhibitions, date)
-        VALUES (${museumCategory}, ${medium}, ${targetAudience}, ${platform}, ${customerJourney}, ${frequencyExhibitions}, ${date})
+        VALUES (${museumCategory}, ${medium}, ${targetAudience}, ${platformArray}, ${customerJourney}, ${frequencyExhibitions}, ${date})
     `;
 
     revalidatePath('/');
-    redirect(`/results?platform=${platform}`);
+    redirect(`/results?platform=${platform.join('&platform=')}`);
 
 }
 

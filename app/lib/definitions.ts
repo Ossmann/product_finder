@@ -9,7 +9,7 @@ export type SearchProfile = {
     museumCategory: string;
     targetAudience: string;
     medium: number;
-    platform: number;
+    platform: string[];
     customerJourney: number;
     frequencyExhibitions: number;
     date: string;

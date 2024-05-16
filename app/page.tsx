@@ -81,7 +81,7 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 flex flex-col items-center justify-center text-center">
-          <p className="uppercase font-bold text-4xl m-8">Welcome Australia</p>
+          <p className="uppercase font-bold text-4xl m-6">Welcome Australia</p>
           <div className="text-xl">
             <p>Find the right tool to tell your culture story.</p>
             <p>Explore our product categories, use the intelligent product finder or get ideas from our AI consultant.</p>

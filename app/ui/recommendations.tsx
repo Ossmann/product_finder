@@ -67,10 +67,10 @@ const platforms = [
       
 const Recommendations = () => {
     const searchParams = useSearchParams();
-    const platformValue = searchParams.get('platform');
+    const platformValues = searchParams.getAll('platform');
 
-    // Filter platforms based on the value of the 'platform' parameter
-    const filteredPlatforms = platforms.filter(p => p.platformValue === platformValue);
+    // Filter platforms based on the value of the 'platform' parameters
+    const filteredPlatforms = platforms.filter(p => platformValues.includes(p.platformValue));
 
     return (
         <div className="flex justify-center mt-4">
