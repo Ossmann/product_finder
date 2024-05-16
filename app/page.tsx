@@ -2,6 +2,7 @@ import Image from "next/image";
 import RoundedButton from "../app/ui/buttons";
 import ProductThumbnail from "./ui/productThumbnail";
 import {
+  ArrowTopRightOnSquareIcon,
   AdjustmentsHorizontalIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline';
@@ -57,7 +58,7 @@ export default function Home() {
         </div>
 
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black opacity-20 z-[-1]"></div>
+        <div className="absolute inset-0 bg-black opacity-40 z-[-1]"></div>
 
         <div className="z-10 w-full max-w-5xl items-center justify-between lg:flex">
 
@@ -81,9 +82,13 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 flex flex-col items-center justify-center text-center">
-          <p className="uppercase font-bold text-4xl m-6">Welcome Australia</p>
+          <div className="uppercase font-bold text-5xl m-6">
+            <p>Welcome Australia</p>
+            <div className="mt-2">
+              <p>Solutions for every Museum Use Case</p>
+            </div>
+          </div>
           <div className="text-xl">
-            <p>Find the right tool to tell your culture story.</p>
             <p>Explore our product categories, use the intelligent product finder or get ideas from our AI consultant.</p>
           </div>
         </div>
