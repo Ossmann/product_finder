@@ -2,6 +2,8 @@
 // Make sure this happens in the cleint
 "use client";
 
+import Image from "next/image";
+
 // import useState so that we can update the response we get from the API
 import { useState } from "react";
 // import axios so we can easily send the user's input to our server
@@ -31,7 +33,7 @@ const ChatBot = () => {
 // The function then waits for the new response and updates the 'response'
 // value which we then display on the page
   const handleSubmit = async () => {
-    const response = (await axios.post("/chat", { question: value })).data
+    const response = (await axios.post("/chatbot/chat", { question: value })).data
       .choices[0].message.content;
     setResponse(response);
   };
@@ -42,8 +44,20 @@ const ChatBot = () => {
 // updates the response from the API
 // We show the updated response on our page
 return (
+  <main>
+    {/* Background image */}
+    <div className="absolute inset-0 z-[-1]">
+          <Image
+            src="/banner-white.jpg"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+            alt="Background Image"
+          />
+        </div>
+  
     <div className="container">
-      <div>
+      <div className="text-black">
         <input
           type="text"
           value={value}
@@ -57,6 +71,7 @@ return (
         <p>Chatbot: {response}</p>
       </div>
     </div>
+  </main>
   );
 };
 
