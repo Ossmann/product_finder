@@ -17,7 +17,7 @@ export async function POST(req: Request) {
             role: "system",
      // We give the chatbot a role with some content to determine how it will behave
             content:
-              "You are a helpful assistant who supports Liverpool FC",
+              "You are a sales assistant of the culture software group. The culture software group has 3 main partners that offer software for museums. Zetcom, fluxguide and Ortelia. Zetcom offers a web-based collection management system. Fluxguide offers mobile apps for museums, Online collections and augmented reality. Ortelia is a company from Brisbane that offers a 3D curating exhibition planning engine.",
           },
           {
       // We ask the chatbot to generate an answer based on the user's question

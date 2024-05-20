@@ -3,6 +3,12 @@
 "use client";
 
 import Image from "next/image";
+import { ChatBotButton } from "../ui/buttons";
+import {
+  SparklesIcon
+} from '@heroicons/react/24/outline';
+import React from 'react';
+
 
 // import useState so that we can update the response we get from the API
 import { useState } from "react";
@@ -14,7 +20,7 @@ const ChatBot = () => {
 // We store and update the responses we get from the API with this state
 // I've added a default value to the 'response' state that we should see 
 // when the page initially loads
-  const [response, setResponse] = useState<string>("Hi there! How can I assist you?");
+  const [response, setResponse] = useState<string>("Welcome! I am your CSG AI assistant. \n How can I help you?");
 // We also store the input we get from the user in the 'value' state and
 // update it everytime the user types into the input field we have added below
   const [value, setValue] = useState<string>("");
@@ -44,35 +50,47 @@ const ChatBot = () => {
 // updates the response from the API
 // We show the updated response on our page
 return (
-  <main>
+  <main className="relative flex items-center justify-center min-h-screen text-black">
     {/* Background image */}
     <div className="absolute inset-0 z-[-1]">
-          <Image
-            src="/banner-white.jpg"
-            layout="fill"
-            objectFit="cover"
-            quality={100}
-            alt="Background Image"
-          />
-        </div>
-  
-    <div className="container">
-      <div className="text-black">
+      <Image
+        src="/banner-white.jpg"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        alt="Background Image"
+      />
+    </div>
+
+    <div className="container mx-auto text-center">
+      <div className="mb-4 text-black">
         <input
           type="text"
           value={value}
           onChange={onChange}
-        ></input>
+          className="w-1/2 px-4 py-2 border border-blue-500 rounded"
+        />
       </div>
-      <div>
-        <button onClick={handleSubmit}>Click me for answers!</button>
+      <div className="mb-4">
+        <ChatBotButton onClick={handleSubmit} icon={<SparklesIcon className="w-5 h-5" />}>
+          Ask AI Consultant
+        </ChatBotButton>
       </div>
-      <div>
-        <p>Chatbot: {response}</p>
+      <div className="w-1/2 mx-auto p-8 bg-white rounded shadow-lg">
+      <p className="text-lg">
+        <img src="csg_logo_noclaim.png" alt="Logo" className="inline-block h-8 mr-2" />
+        :&nbsp;
+        {response.split('\n').map((paragraph, index) => (
+          <React.Fragment key={index}>
+            {paragraph}
+            <br />
+          </React.Fragment>
+        ))}
+        </p>
       </div>
     </div>
   </main>
-  );
+);
 };
 
 export default ChatBot;

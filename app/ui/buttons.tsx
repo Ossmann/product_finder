@@ -44,3 +44,19 @@ const RoundedButton: React.FC<RoundedButtonProps> = ({ href, children, icon }) =
 
 export default RoundedButton;
 
+
+export function ChatBotButton({ icon, onClick, children }: FormProps) {
+  
+  return (
+   <button
+      onClick={onClick}
+      className={clsx(
+        'inline-flex items-center px-6 py-3 bg-orange-500 border border-orange-500 rounded text-white hover:bg-white hover:text-orange-500 transition duration-300 ease-in-out uppercase',
+      )}
+    >
+      {icon && <span className="mr-2">{icon}</span>}
+      {children}
+    </button>
+  );
+}
+
