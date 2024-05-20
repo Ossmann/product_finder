@@ -58,7 +58,7 @@ export default function Home() {
         </div>
 
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black opacity-40 z-[-1]"></div>
+        <div className="absolute inset-0 bg-black opacity-50 z-[-1]"></div>
 
         <div className="z-10 w-full max-w-5xl items-center justify-between lg:flex">
 
@@ -108,7 +108,7 @@ export default function Home() {
         </div>
         
         <div className="opacity-50">
-            <RoundedButton icon={<SparklesIcon className="w-5 h-5" />} href="/ai">
+            <RoundedButton icon={<SparklesIcon className="w-5 h-5" />} href="/chatbot">
             AI Consultant
             </RoundedButton>
         </div>
